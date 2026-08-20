@@ -1,0 +1,98 @@
+[
+  {
+    "id": "reach-of-a-combination",
+    "module": "ch01",
+    "title": "What c·v + d·w can reach",
+    "free": true
+  },
+  {
+    "id": "dot-product-and-angle",
+    "module": "ch01",
+    "title": "The dot product, the angle, and the right-angle test",
+    "free": true
+  },
+  {
+    "id": "ax-columns-and-rows",
+    "module": "ch01",
+    "title": "Ax: the same answer by columns and by rows",
+    "free": true
+  },
+  {
+    "id": "two-pictures-of-ax-b",
+    "module": "ch02",
+    "title": "The row picture and the column picture, side by side",
+    "free": false
+  },
+  {
+    "id": "elimination-step-by-step",
+    "module": "ch02",
+    "title": "Forward elimination, one step at a time",
+    "free": false
+  },
+  {
+    "id": "ab-versus-ba",
+    "module": "ch02",
+    "title": "AB against BA on the same square",
+    "free": false
+  },
+  {
+    "id": "det-and-row-operations",
+    "module": "ch03",
+    "title": "What a row operation does to the determinant",
+    "free": false
+  },
+  {
+    "id": "det-of-a-product",
+    "module": "ch03",
+    "title": "det(AB) = det A · det B, even though AB ≠ BA",
+    "free": false
+  },
+  {
+    "id": "cramer-and-the-two-pictures",
+    "module": "ch03",
+    "title": "Cramer's rule against the system it solves",
+    "free": false
+  },
+  {
+    "id": "elimination-to-echelon",
+    "module": "ch04",
+    "title": "Elimination, step by step — where the pivots end up",
+    "free": false
+  },
+  {
+    "id": "rank-and-dependence",
+    "module": "ch04",
+    "title": "Rank, the dependence relation, and a maximal independent subset",
+    "free": false
+  },
+  {
+    "id": "consistency-of-ax-b",
+    "module": "ch04",
+    "title": "When Ax = b has no solution",
+    "free": false
+  },
+  {
+    "id": "complete-solution-set",
+    "module": "ch04",
+    "title": "The solution set: a point, a line, or nothing",
+    "free": false
+  },
+  {
+    "id": "eigenvector-hunt",
+    "module": "ch05",
+    "title": "Turning a vector until Av lines up",
+    "free": false
+  },
+  {
+    "id": "rotation-has-no-real-eigenvector",
+    "module": "ch05",
+    "title": "A rotation with no direction to keep",
+    "free": false
+  },
+  {
+    "id": "ab-and-ba-share-eigenvalues",
+    "module": "ch05",
+    "title": "AB and BA: different matrices, one spectrum",
+    "free": false
+  }
+]

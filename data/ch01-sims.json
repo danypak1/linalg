@@ -1,0 +1,163 @@
+{
+  "module": "ch01",
+  "sims": [
+    {
+      "id": "reach-of-a-combination",
+      "title": "What c·v + d·w can reach",
+      "type": "linComb",
+      "params": [
+        { "key": "v1", "label": "v₁", "min": -4, "max": 4, "step": 1, "value": 1 },
+        { "key": "v2", "label": "v₂", "min": -4, "max": 4, "step": 1, "value": 2 },
+        { "key": "w1", "label": "w₁", "min": -4, "max": 4, "step": 1, "value": 3 },
+        { "key": "w2", "label": "w₂", "min": -4, "max": 4, "step": 1, "value": 1 },
+        { "key": "c", "label": "c", "min": -3, "max": 5, "step": 1, "value": 1 },
+        { "key": "d", "label": "d", "min": -3, "max": 5, "step": 1, "value": 1 }
+      ],
+      "intro": "The two starting vectors are the robot's steps from §1.1: $\\mathbf{v}=\\begin{bmatrix}1\\\\2\\end{bmatrix}$ and $\\mathbf{w}=\\begin{bmatrix}3\\\\1\\end{bmatrix}$, and the sliders $c$ and $d$ say how many of each to run. The red arrow is $c\\mathbf{v}+d\\mathbf{w}$, drawn as $c\\mathbf{v}$ first and then $d\\mathbf{w}$ tip-to-tail — the picture of 'do this, then that'.",
+      "watch": [
+        "The readout $v_1w_2-v_2w_1$ is the test from §1.2. While it is nonzero, the two dashed guide lines point in genuinely different directions and every point of the plane is within reach.",
+        "Change $c$ alone: the red tip slides along a line parallel to $\\mathbf{v}$. Change $d$ alone and it slides parallel to $\\mathbf{w}$. Two independent slides are exactly why two non-parallel vectors cover a two-dimensional plane.",
+        "Setting $c=d=0$ lands on the origin. That is why the zero vector is on every plane described as $c\\mathbf{v}+d\\mathbf{w}$ — a question worth two marks on Midterm 2024."
+      ],
+      "challenges": [
+        {
+          "prompt": "With the starting vectors $\\mathbf{v}=\\begin{bmatrix}1\\\\2\\end{bmatrix}$ and $\\mathbf{w}=\\begin{bmatrix}3\\\\1\\end{bmatrix}$ in place, set $c=2$ and $d=4$ — the answer to the robot problem in §1.3. Read the sum.",
+          "check": [
+            { "param": "v1", "target": 1, "tol": 0.01 },
+            { "param": "v2", "target": 2, "tol": 0.01 },
+            { "param": "w1", "target": 3, "tol": 0.01 },
+            { "param": "w2", "target": 1, "tol": 0.01 },
+            { "param": "c", "target": 2, "tol": 0.01 },
+            { "param": "d", "target": 4, "tol": 0.01 }
+          ],
+          "explain": "The readout shows $(14, 8)$: two of Step A and four of Step B land exactly on the target. Because $v_1w_2-v_2w_1 = -5 \\ne 0$, Fact 1 promised in advance both that a recipe exists and that this is the only one — no other pair $(c,d)$ produces $(14,8)$."
+        },
+        {
+          "prompt": "Now make $\\mathbf{w}$ a multiple of $\\mathbf{v}$: leave $\\mathbf{v}=\\begin{bmatrix}1\\\\2\\end{bmatrix}$ and set $w_1=2$ and $w_2=4$, so $\\mathbf{w}=2\\mathbf{v}$. Then move $c$ and $d$ anywhere you like.",
+          "check": [
+            { "param": "v1", "target": 1, "tol": 0.01 },
+            { "param": "v2", "target": 2, "tol": 0.01 },
+            { "param": "w1", "target": 2, "tol": 0.01 },
+            { "param": "w2", "target": 4, "tol": 0.01 }
+          ],
+          "explain": "The cross term drops to zero and the verdict changes to 'one line only'. Every combination now reads as a point on the line through $(1,2)$, whatever $c$ and $d$ do — because $c\\mathbf{v}+d(2\\mathbf{v}) = (c+2d)\\mathbf{v}$. This is the trap in §1.2: two directions that are secretly one direction buy you no more reach than a single vector."
+        },
+        {
+          "prompt": "Keeping $\\mathbf{w}=2\\mathbf{v}$, try to reach the point $(14,8)$ by moving $c$ and $d$: start with $c=5$ and $d=1$, then try any other pair.",
+          "check": [
+            { "param": "v1", "target": 1, "tol": 0.01 },
+            { "param": "v2", "target": 2, "tol": 0.01 },
+            { "param": "w1", "target": 2, "tol": 0.01 },
+            { "param": "w2", "target": 4, "tol": 0.01 },
+            { "param": "c", "target": 5, "tol": 0.01 },
+            { "param": "d", "target": 1, "tol": 0.01 }
+          ],
+          "explain": "It cannot be done, and the readout shows why: every sum has its second component exactly twice the first, while $(14,8)$ has $8 \\ne 28$. The algebraic version of the same fact is the contradiction $2\\times 14 \\ne 8$ between the two component equations — which is what you would write in an exam answer."
+        }
+      ],
+      "review": "1.2"
+    },
+    {
+      "id": "dot-product-and-angle",
+      "title": "The dot product, the angle, and the right-angle test",
+      "type": "dotAngle",
+      "params": [
+        { "key": "v1", "label": "v₁", "min": -5, "max": 5, "step": 1, "value": 3 },
+        { "key": "v2", "label": "v₂", "min": -5, "max": 5, "step": 1, "value": 4 },
+        { "key": "w1", "label": "w₁", "min": -5, "max": 5, "step": 1, "value": 1 },
+        { "key": "w2", "label": "w₂", "min": -5, "max": 5, "step": 1, "value": 1 }
+      ],
+      "intro": "Six readouts, in the order an exam answer works through them: the dot product, then the two lengths, then $\\cos\\theta = \\dfrac{\\mathbf{v}\\cdot\\mathbf{w}}{\\|\\mathbf{v}\\|\\|\\mathbf{w}\\|}$, then $\\theta$ itself. If your hand calculation disagrees with the final angle, comparing line by line tells you which step slipped.",
+      "watch": [
+        "The sign of $\\mathbf{v}\\cdot\\mathbf{w}$ tracks the angle exactly: positive under $90°$, zero at $90°$, negative above it. That is Theorem 1 doing its work, since $\\cos\\theta$ is the only factor on the right that can change sign.",
+        "Lengthen $\\mathbf{v}$ without turning it (set it to $(1,2)$, then to $(2,4)$): the dot product doubles but $\\theta$ does not move. Dividing by both lengths is what removes the size and leaves the direction.",
+        "$\\cos\\theta$ never leaves $[-1,1]$, however extreme the components get. That is the Cauchy–Schwarz inequality showing up as a guarantee that $\\arccos$ always has an answer."
+      ],
+      "challenges": [
+        {
+          "prompt": "Set $\\mathbf{w} = \\begin{bmatrix}4\\\\-3\\end{bmatrix}$ against the starting $\\mathbf{v} = \\begin{bmatrix}3\\\\4\\end{bmatrix}$, and read the dot product and the angle.",
+          "check": [
+            { "param": "v1", "target": 3, "tol": 0.01 },
+            { "param": "v2", "target": 4, "tol": 0.01 },
+            { "param": "w1", "target": 4, "tol": 0.01 },
+            { "param": "w2", "target": -3, "tol": 0.01 }
+          ],
+          "explain": "$\\mathbf{v}\\cdot\\mathbf{w} = 12-12 = 0$ and $\\theta = 90°$: this is the swap-and-negate construction from §1.7, where the cancellation is forced by the algebra rather than by these particular numbers. Note both vectors have length 5 and neither is zero — a zero dot product says nothing about either vector being zero."
+        },
+        {
+          "prompt": "Now set $\\mathbf{w} = \\begin{bmatrix}-3\\\\-4\\end{bmatrix}$, the exact reverse of the unchanged $\\mathbf{v} = \\begin{bmatrix}3\\\\4\\end{bmatrix}$.",
+          "check": [
+            { "param": "v1", "target": 3, "tol": 0.01 },
+            { "param": "v2", "target": 4, "tol": 0.01 },
+            { "param": "w1", "target": -3, "tol": 0.01 },
+            { "param": "w2", "target": -4, "tol": 0.01 }
+          ],
+          "explain": "$\\theta = 180°$ and $\\cos\\theta = -1$, so $\\mathbf{v}\\cdot\\mathbf{w} = -\\|\\mathbf{v}\\|\\|\\mathbf{w}\\| = -25$ — as negative as it is possible to get for these two lengths. Opposite directions are the extreme case of a negative dot product, not a case of zero."
+        },
+        {
+          "prompt": "Set $\\mathbf{w} = \\begin{bmatrix}1\\\\2\\end{bmatrix}$, still against $\\mathbf{v} = \\begin{bmatrix}3\\\\4\\end{bmatrix}$, and compute $\\cos\\theta$ by hand before reading it off.",
+          "check": [
+            { "param": "v1", "target": 3, "tol": 0.01 },
+            { "param": "v2", "target": 4, "tol": 0.01 },
+            { "param": "w1", "target": 1, "tol": 0.01 },
+            { "param": "w2", "target": 2, "tol": 0.01 }
+          ],
+          "explain": "$\\mathbf{v}\\cdot\\mathbf{w} = 3+8 = 11$, $\\|\\mathbf{v}\\| = 5$, $\\|\\mathbf{w}\\| = \\sqrt5$, so $\\cos\\theta = \\dfrac{11}{5\\sqrt5} \\approx 0.984$ and $\\theta \\approx 10.3°$. The two directions are close but not identical — and the check that catches a slip is that $\\cos\\theta$ came out inside $[-1,1]$."
+        }
+      ],
+      "review": "1.5"
+    },
+    {
+      "id": "ax-columns-and-rows",
+      "title": "Ax: the same answer by columns and by rows",
+      "type": "matVec",
+      "params": [
+        { "key": "a11", "label": "a₁₁", "min": -4, "max": 4, "step": 1, "value": 2 },
+        { "key": "a12", "label": "a₁₂", "min": -4, "max": 4, "step": 1, "value": 1 },
+        { "key": "a21", "label": "a₂₁", "min": -4, "max": 4, "step": 1, "value": 0 },
+        { "key": "a22", "label": "a₂₂", "min": -4, "max": 4, "step": 1, "value": 3 },
+        { "key": "x1", "label": "x₁", "min": -4, "max": 4, "step": 1, "value": 2 },
+        { "key": "x2", "label": "x₂", "min": -4, "max": 4, "step": 1, "value": 1 }
+      ],
+      "intro": "The thin arrows are the columns $\\mathbf{a}_1$ and $\\mathbf{a}_2$ of $A$ — fixed directions stored once. The dashed arrows are $x_1\\mathbf{a}_1$ then $x_2\\mathbf{a}_2$, laid tip-to-tail, and the red arrow is $A\\mathbf{x}$. The last three readouts recompute the same product row by row.",
+      "watch": [
+        "'Ax by columns' and the two row readouts always match. That is Theorem 2, and it is the free check you should run on every product you compute by hand.",
+        "Changing $\\mathbf{x}$ moves the red arrow but leaves the thin column arrows alone: $\\mathbf{x}$ is the recipe, $A$ is the pair of ingredients.",
+        "Make the two columns parallel — $\\mathbf{a}_1 = \\begin{bmatrix}1\\\\2\\end{bmatrix}$ and $\\mathbf{a}_2 = \\begin{bmatrix}2\\\\4\\end{bmatrix}$ — and every $A\\mathbf{x}$ is trapped on one line, whatever $\\mathbf{x}$ is. The reachable outputs of a matrix are exactly the combinations of its columns."
+      ],
+      "challenges": [
+        {
+          "prompt": "With the starting $A = \\begin{bmatrix}2&1\\\\0&3\\end{bmatrix}$, set $\\mathbf{x} = \\begin{bmatrix}4\\\\2\\end{bmatrix}$ and confirm both routes agree.",
+          "check": [
+            { "param": "a11", "target": 2, "tol": 0.01 },
+            { "param": "a12", "target": 1, "tol": 0.01 },
+            { "param": "a21", "target": 0, "tol": 0.01 },
+            { "param": "a22", "target": 3, "tol": 0.01 },
+            { "param": "x1", "target": 4, "tol": 0.01 },
+            { "param": "x2", "target": 2, "tol": 0.01 }
+          ],
+          "explain": "Columns: $4\\begin{bmatrix}2\\\\0\\end{bmatrix}+2\\begin{bmatrix}1\\\\3\\end{bmatrix} = \\begin{bmatrix}10\\\\6\\end{bmatrix}$. Rows: $2(4)+1(2) = 10$ and $0(4)+3(2) = 6$. Identical, as Theorem 2 requires — and if your own two computations ever disagree, one of them contains an arithmetic slip, not a conceptual one."
+        },
+        {
+          "prompt": "Set $x_1 = 1$ and $x_2 = 0$. Where does the red arrow land, and why?",
+          "check": [
+            { "param": "x1", "target": 1, "tol": 0.01 },
+            { "param": "x2", "target": 0, "tol": 0.01 }
+          ],
+          "explain": "On column 1 exactly: $A\\mathbf{x} = 1\\mathbf{a}_1+0\\mathbf{a}_2 = \\mathbf{a}_1$. Feeding in a vector with a single 1 selects that column — which is why the columns of $A$ are the natural things to think in, and why the identity matrix (Module 02) selects every column and changes nothing."
+        },
+        {
+          "prompt": "Make the columns parallel: $a_{11}=1$, $a_{21}=2$, $a_{12}=2$, $a_{22}=4$. Then move $\\mathbf{x}$ around.",
+          "check": [
+            { "param": "a11", "target": 1, "tol": 0.01 },
+            { "param": "a21", "target": 2, "tol": 0.01 },
+            { "param": "a12", "target": 2, "tol": 0.01 },
+            { "param": "a22", "target": 4, "tol": 0.01 }
+          ],
+          "explain": "Every output lands on the line through $(1,2)$, because $A\\mathbf{x} = (x_1+2x_2)\\mathbf{a}_1$. Most target vectors $\\mathbf{b}$ are therefore unreachable, so $A\\mathbf{x}=\\mathbf{b}$ has no solution for them — the same collapse you met in §1.2, now stated about a matrix. Module 02 gives it a name: this $A$ is singular."
+        }
+      ],
+      "review": "1.9"
+    }
+  ]
+}

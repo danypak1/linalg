@@ -1,0 +1,360 @@
+{
+  "_note": "Module ch01 is the free sample (linalg.course.json \"free\"), so this key ships as a static file in the public tree — see site/api.js, \"free module: notes, summary, questions, answers — all static files\". The keys for ch02-ch05 are served per-question by the Worker to logged-in students and must never appear in dist/. Do not withhold this file from the publish step: it is what makes the free module usable before anyone has paid.",
+  "mcq": {
+    "A1": {
+      "answer": "b",
+      "review": "1.1",
+      "explanation": "Scale each vector first, then subtract component by component: $2\\mathbf{v}=\\begin{bmatrix}6\\\\-2\\end{bmatrix}$ and $3\\mathbf{w}=\\begin{bmatrix}-6\\\\12\\end{bmatrix}$, so $2\\mathbf{v}-3\\mathbf{w}=\\begin{bmatrix}6-(-6)\\\\-2-12\\end{bmatrix}=\\begin{bmatrix}12\\\\-14\\end{bmatrix}$.",
+      "diagnostics": {
+        "a": "That is $2\\mathbf{v}+3\\mathbf{w}$: the $-3$ was applied as $+3$ in both components, not in one only. Subtraction has to reach every component of $3\\mathbf{w}$.",
+        "c": "The first component is right, so the scaling was fine; the second lost the sign of $-3(4)=-12$. Subtracting $+12$ from $-2$ gives $-14$.",
+        "d": "The first component was computed as $2\\mathbf{v}+3\\mathbf{w}$, giving $6+(-6)=0$; the second was computed correctly. Apply $-3$ to every component of $\\mathbf{w}$ before adding."
+      }
+    },
+    "A2": {
+      "answer": "d",
+      "review": "1.1",
+      "explanation": "Subtract the second equation from the first: $(\\mathbf{v}+\\mathbf{w})-(\\mathbf{v}-\\mathbf{w}) = 2\\mathbf{w} = \\begin{bmatrix}6\\\\6\\end{bmatrix}$, so $\\mathbf{w}=\\begin{bmatrix}3\\\\3\\end{bmatrix}$.",
+      "diagnostics": {
+        "a": "That is $\\mathbf{v}$, not $\\mathbf{w}$ — adding the two equations isolates $\\mathbf{v}$; subtracting isolates $\\mathbf{w}$.",
+        "b": "That is $2\\mathbf{w}$. The final division of every component by 2 is still owed.",
+        "c": "That is $2\\mathbf{v}$: you added the equations and then did not halve. Both steps went the wrong way."
+      }
+    },
+    "A3": {
+      "answer": "a",
+      "review": "1.2",
+      "explanation": "The test is $v_1w_2-v_2w_1=0$. Here $2(-3)-6(-1) = -6+6 = 0$, and indeed $\\mathbf{w}=-\\tfrac12\\mathbf{v}$ — one line only. Every other pair gives a nonzero value and therefore reaches the whole plane.",
+      "diagnostics": {
+        "b": "$2(-1)-6(3) = -20 \\ne 0$. The same first vector appears in the correct pair, so the decision rests entirely on the second one.",
+        "c": "$1(1)-4(4) = -15 \\ne 0$. Swapped components are not a scalar multiple — only a common factor throughout would be.",
+        "d": "$0(0)-5(5) = -25 \\ne 0$. These two are perpendicular, which is the opposite extreme: they reach the whole plane."
+      }
+    },
+    "A4": {
+      "answer": "c",
+      "review": "1.3",
+      "explanation": "Two unknowns are pinned down by two of the equations; the remaining equation is then a genuine test, which $\\mathbf{b}$ passes only if it lies on the plane. Two vectors in $\\mathbb{R}^3$ reach a plane, never all of $\\mathbb{R}^3$.",
+      "diagnostics": {
+        "a": "There are only two unknowns, $c$ and $d$ — the number of unknowns is set by how many vectors are being combined, not by the dimension they live in.",
+        "b": "It duplicates the others only by coincidence. In general it carries new information, and ignoring it is exactly how a student concludes that an unreachable $\\mathbf{b}$ is reachable.",
+        "d": "Nothing in the equations sets a scale for $\\mathbf{v}$ or $\\mathbf{w}$; they are fixed data, and $c,d$ are the only free quantities."
+      }
+    },
+    "A5": {
+      "answer": "d",
+      "review": "1.4",
+      "explanation": "$\\|\\mathbf{a}\\| = \\sqrt{5^2+(-12)^2} = \\sqrt{25+144} = \\sqrt{169} = 13$.",
+      "diagnostics": {
+        "a": "You took a square root of the difference of squares, or of $144-25$. The rule adds the squares: $25+144$.",
+        "b": "That is $5^2+(-12)^2$ — the sum of squares, with the final square root still owed.",
+        "c": "That is $5+12$: the components were added without being squared first."
+      }
+    },
+    "A6": {
+      "answer": "b",
+      "review": "1.4",
+      "explanation": "$\\mathbf{v}\\cdot\\mathbf{w} = 4(3)+(-3)(4) = 12-12 = 0$. The two are perpendicular — this is the swap-and-negate pair from §1.7.",
+      "diagnostics": {
+        "a": "The sign of the second product was dropped: $(-3)(4) = -12$, not $+12$. Write each product out when negatives appear.",
+        "c": "The dot product returns a single number, never a vector. Multiplying matching components is only the first half of the operation — they must then be added.",
+        "d": "That is $\\|\\mathbf{v}\\|^2$ or $\\|\\mathbf{w}\\|^2$: you dotted one vector with itself rather than with the other."
+      }
+    },
+    "A7": {
+      "answer": "c",
+      "review": "1.5",
+      "explanation": "$\\cos\\theta = \\dfrac{\\mathbf{v}\\cdot\\mathbf{w}}{\\|\\mathbf{v}\\|\\,\\|\\mathbf{w}\\|} = \\dfrac{6}{3\\cdot 4} = 0.5$, so $\\theta = 60°$.",
+      "diagnostics": {
+        "a": "That is the raw dot product. It grows when either vector is lengthened, so it cannot be a cosine — dividing by $\\|\\mathbf{v}\\|\\|\\mathbf{w}\\|$ is what removes the lengths.",
+        "b": "You divided by only one length, $6/4$. Both lengths must go, or the result can leave $[-1,1]$ and no angle exists.",
+        "d": "You divided by the product of the lengths twice: $6/12/2$. Once is enough."
+      }
+    },
+    "A8": {
+      "answer": "a",
+      "review": "1.5",
+      "explanation": "$(2\\mathbf{v})\\cdot\\mathbf{w} = 2(\\mathbf{v}\\cdot\\mathbf{w})$ by Lemma 1(c). But $\\|2\\mathbf{v}\\| = 2\\|\\mathbf{v}\\|$ as well, so in $\\cos\\theta = \\dfrac{\\mathbf{v}\\cdot\\mathbf{w}}{\\|\\mathbf{v}\\|\\|\\mathbf{w}\\|}$ the factor of 2 cancels top and bottom — and geometrically, a longer arrow along the same line points the same way.",
+      "diagnostics": {
+        "b": "Scaling by a positive number never changes direction, so the angle cannot move. Only adding a differently-directed vector changes direction.",
+        "c": "The dot product does change — it is built from the components, and every component of $\\mathbf{v}$ has doubled.",
+        "d": "The angle is indeed unchanged, but the dot product is not: every component of $\\mathbf{v}$ has doubled, so the sum of products doubles too."
+      }
+    },
+    "A9": {
+      "answer": "b",
+      "review": "1.6",
+      "explanation": "Corollary 1: for nonzero vectors, $\\mathbf{v}\\cdot\\mathbf{w}=0$ exactly when $\\cos\\theta = 0$, i.e. $\\theta = 90°$. The lengths are irrelevant to the test. The qualifier matters: the zero vector has a zero dot product with everything and no angle at all, which is why the statement is made about nonzero vectors.",
+      "diagnostics": {
+        "a": "Equal lengths are neither needed nor enough: $(3,0)\\cdot(0,5)=0$ with lengths $3$ and $5$, and $(1,0)\\cdot(1,0)=1\\ne 0$ with equal lengths. Length and angle are independent.",
+        "c": "That is the instinct from ordinary numbers, where $ab=0$ forces a factor to vanish. Here $(1,0)\\cdot(0,1)=0$ with neither vector zero.",
+        "d": "Scalar multiples are the most aligned case, $\\theta = 0°$ or $180°$; their dot product is as far from zero as possible."
+      }
+    },
+    "A10": {
+      "answer": "d",
+      "review": "1.7",
+      "explanation": "Every point of $P$ is some $c\\mathbf{v}+d\\mathbf{w}$, and the dot product distributes and pulls out scalars (Lemma 1b, c), so $\\mathbf{n}\\cdot(c\\mathbf{v}+d\\mathbf{w}) = c(0)+d(0) = 0$ for every $c,d$ — two checks cover infinitely many points.",
+      "diagnostics": {
+        "a": "A unique normal direction is not what is being asked, and on its own it says nothing about points of $P$ other than $\\mathbf{v}$ and $\\mathbf{w}$.",
+        "b": "Normalising $\\mathbf{n}$ changes its length, not what it is perpendicular to — that is a separate, later step.",
+        "c": "$\\mathbf{v}$ and $\\mathbf{w}$ need not be perpendicular to each other; the argument works for any two spanning vectors."
+      }
+    },
+    "A11": {
+      "answer": "a",
+      "review": "1.8",
+      "explanation": "$A\\mathbf{x}$ is a combination of the columns of $A$, and each column lives in $\\mathbb{R}^3$ because $A$ has 3 rows. The columns must match $\\mathbf{x}$ in number (they do: 2), but the output size is set by the rows.",
+      "diagnostics": {
+        "b": "The column count decides whether the product is *legal*, not how big the answer is: $A$ has 2 columns and $\\mathbf{x}$ has 2 components, so $A\\mathbf{x}$ exists — and the 3 rows then set its size.",
+        "c": "One *row* of $A$ dotted with $\\mathbf{x}$ gives one number, but $A$ has 3 rows, so 3 numbers come out and they stack into a vector in $\\mathbb{R}^3$. A matrix–vector product can also change dimension — that is what distinguishes it from anything in §1.1.",
+        "d": "Those 6 products are the arithmetic, not the answer: the two products along each row are added together, so each row contributes one component and $A$ has 3 rows."
+      }
+    },
+    "A12": {
+      "answer": "c",
+      "review": "1.9",
+      "explanation": "By columns: $4\\begin{bmatrix}2\\\\0\\end{bmatrix}+2\\begin{bmatrix}1\\\\3\\end{bmatrix} = \\begin{bmatrix}10\\\\6\\end{bmatrix}$. Check by rows: $2(4)+1(2)=10$ and $0(4)+3(2)=6$.",
+      "diagnostics": {
+        "a": "The entries of $A$ were multiplied by the entries of $\\mathbf{x}$ positionally ($2\\cdot4$, $3\\cdot2$) without adding the second contribution to each output component.",
+        "b": "The columns were added without being scaled first, then $\\mathbf{x}$ was added on: $\\begin{bmatrix}2\\\\0\\end{bmatrix}+\\begin{bmatrix}1\\\\3\\end{bmatrix}+\\begin{bmatrix}4\\\\2\\end{bmatrix} = \\begin{bmatrix}7\\\\5\\end{bmatrix}$. Each column is scaled by the matching entry of $\\mathbf{x}$ first, and $\\mathbf{x}$ itself is never added on.",
+        "d": "The first component is right; the second scaled column 2 by $x_1=4$ instead of $x_2=2$, giving $0(4)+3(4)=12$. Each column takes the entry of $\\mathbf{x}$ sitting in its own position."
+      }
+    }
+  },
+  "short": {
+    "B1": {
+      "review": "1.3",
+      "model": "**Expand:** $c\\begin{bmatrix}2\\\\5\\end{bmatrix}+d\\begin{bmatrix}-1\\\\3\\end{bmatrix} = \\begin{bmatrix}2c-d\\\\5c+3d\\end{bmatrix}$. **Match components:** $2c-d = 9$ and $5c+3d = 4$. **Solve:** multiply the first by 3 to get $6c-3d = 27$, then add the second: $11c = 31$, so $c = \\tfrac{31}{11}$, and $d = 2c-9 = \\tfrac{62}{11}-\\tfrac{99}{11} = -\\tfrac{37}{11}$. **Check** (multiply through by 11 for convenience): first component $2(31)-(-37) = 99 = 11\\times 9$ ✓; second $5(31)+3(-37) = 155-111 = 44 = 11\\times 4$ ✓. The coefficients are not whole numbers, which changes nothing about the method.",
+      "marks": [
+        "expansion written out and components matched to give two scalar equations",
+        "system solved correctly to $c = 31/11$, $d = -37/11$",
+        "answer substituted back and both components verified"
+      ]
+    },
+    "B2": {
+      "review": "1.2",
+      "model": "**Test:** $v_1w_2-v_2w_1 = 2(-3)-6(-1) = -6+6 = 0$, so the two vectors lie on one line through the origin — indeed $\\mathbf{w} = -\\tfrac12\\mathbf{v}$. **What that means:** every combination $c\\mathbf{v}+d\\mathbf{w}$ is a multiple of $\\begin{bmatrix}1\\\\3\\end{bmatrix}$, so the reachable set is the single line $y = 3x$, not the plane. **Conclusion:** the target $\\begin{bmatrix}4\\\\5\\end{bmatrix}$ has $y = 5$ while $3x = 12$, so it is off that line and **no solution exists**.",
+      "marks": [
+        "parallel test computed and found to be zero",
+        "reachable set correctly identified as one line, with its direction",
+        "target shown not to lie on that line, so no solution"
+      ]
+    },
+    "B3": {
+      "review": "1.7",
+      "model": "$\\|\\mathbf{v}\\| = \\sqrt{8^2+15^2} = \\sqrt{64+225} = \\sqrt{289} = 17$. Dividing **every** component by 17: $\\mathbf{u} = \\begin{bmatrix}8/17\\\\15/17\\end{bmatrix}$. Verification: $\\left(\\tfrac{8}{17}\\right)^2+\\left(\\tfrac{15}{17}\\right)^2 = \\tfrac{64+225}{289} = \\tfrac{289}{289} = 1$ ✓",
+      "marks": [
+        "length computed as 17",
+        "both components divided by the same length, and the result verified to have length 1"
+      ]
+    },
+    "B4": {
+      "review": "1.5",
+      "model": "$\\mathbf{v}\\cdot\\mathbf{w} = 2(2)+2(-1)+(-1)(2) = 4-2-2 = 0$. Lengths: $\\|\\mathbf{v}\\| = \\sqrt{4+4+1} = 3$ and $\\|\\mathbf{w}\\| = \\sqrt{4+1+4} = 3$. So $\\cos\\theta = \\dfrac{0}{3\\cdot 3} = 0$ and $\\theta = 90°$. **Geometrically:** the two vectors are perpendicular (Corollary 1). Note that neither vector is zero — a zero dot product says nothing about either vector being zero, only about the angle between them.",
+      "marks": [
+        "dot product computed as 0, with each signed product shown",
+        "both lengths computed and $\\cos\\theta = 0$ obtained",
+        "interpreted as perpendicular, with the point that neither vector is zero"
+      ]
+    },
+    "B5": {
+      "review": "1.6",
+      "model": "**Right angle:** $\\mathbf{v}\\cdot\\mathbf{w} = 6(-1)+2(3) = -6+6 = 0$, so by Corollary 1 the two sides meeting at that corner are perpendicular. In a parallelogram, opposite angles are equal and consecutive angles sum to $180°$, so all four angles are $90°$ — it is a rectangle. **Identity:** $\\|\\mathbf{v}\\|^2 = 36+4 = 40$ and $\\|\\mathbf{w}\\|^2 = 1+9 = 10$; $\\mathbf{v}+\\mathbf{w} = \\begin{bmatrix}5\\\\5\\end{bmatrix}$, so $\\|\\mathbf{v}+\\mathbf{w}\\|^2 = 25+25 = 50 = 40+10$ ✓, exactly as Corollary 2 requires when $\\mathbf{v}\\perp\\mathbf{w}$.",
+      "marks": [
+        "dot product shown to be zero and the perpendicularity test named",
+        "argument that one right angle in a parallelogram forces all four",
+        "the three squared lengths computed and the identity checked"
+      ]
+    },
+    "B6": {
+      "review": "1.6",
+      "model": "Use $\\|\\mathbf{x}\\|^2 = \\mathbf{x}\\cdot\\mathbf{x}$ and expand both squares with Lemma 1 (distributivity and symmetry): $$\\|\\mathbf{v}+\\mathbf{w}\\|^2 = (\\mathbf{v}+\\mathbf{w})\\cdot(\\mathbf{v}+\\mathbf{w}) = \\mathbf{v}\\cdot\\mathbf{v}+2(\\mathbf{v}\\cdot\\mathbf{w})+\\mathbf{w}\\cdot\\mathbf{w} = \\|\\mathbf{v}\\|^2+2(\\mathbf{v}\\cdot\\mathbf{w})+\\|\\mathbf{w}\\|^2$$ $$\\|\\mathbf{v}-\\mathbf{w}\\|^2 = (\\mathbf{v}-\\mathbf{w})\\cdot(\\mathbf{v}-\\mathbf{w}) = \\|\\mathbf{v}\\|^2-2(\\mathbf{v}\\cdot\\mathbf{w})+\\|\\mathbf{w}\\|^2$$ Adding the two lines, the $+2(\\mathbf{v}\\cdot\\mathbf{w})$ and $-2(\\mathbf{v}\\cdot\\mathbf{w})$ cancel exactly, leaving $2\\|\\mathbf{v}\\|^2+2\\|\\mathbf{w}\\|^2$. ∎ No assumption of perpendicularity and no specific numbers were used, so the identity holds for every pair of vectors in every $\\mathbb{R}^n$.",
+      "marks": [
+        "$\\|\\mathbf{x}\\|^2 = \\mathbf{x}\\cdot\\mathbf{x}$ used to convert both squared lengths into dot products",
+        "both expansions carried out with the middle term shown, using symmetry to combine $\\mathbf{v}\\cdot\\mathbf{w}$ and $\\mathbf{w}\\cdot\\mathbf{v}$",
+        "the two results added and the cross terms cancelled",
+        "explicit statement that nothing was assumed about the angle, so it holds for all $\\mathbf{v},\\mathbf{w}$"
+      ]
+    },
+    "B7": {
+      "review": "1.7",
+      "model": "$\\mathbf{n}\\cdot\\mathbf{v} = 1(2)+(-2)(1)+1(0) = 0$ and $\\mathbf{n}\\cdot\\mathbf{w} = 1(0)+(-2)(1)+1(2) = 0$. Two checks suffice because every point of $P$ has the form $c\\mathbf{v}+d\\mathbf{w}$, and by Lemma 1(b),(c), $\\mathbf{n}\\cdot(c\\mathbf{v}+d\\mathbf{w}) = c(\\mathbf{n}\\cdot\\mathbf{v})+d(\\mathbf{n}\\cdot\\mathbf{w}) = c(0)+d(0) = 0$ for every $c$ and $d$ — so $\\mathbf{n}$ is perpendicular to the whole plane, not merely to the two spanning vectors.",
+      "marks": [
+        "both dot products computed and shown to be zero",
+        "the distributive identity written out for a general point $c\\mathbf{v}+d\\mathbf{w}$",
+        "conclusion stated for every point of the plane, not just for $\\mathbf{v}$ and $\\mathbf{w}$"
+      ]
+    },
+    "B8": {
+      "review": "1.9",
+      "model": "**By columns:** $$\\begin{aligned} A\\mathbf{x} &= 2\\begin{bmatrix}1\\\\0\\end{bmatrix}+1\\begin{bmatrix}-1\\\\3\\end{bmatrix}+3\\begin{bmatrix}2\\\\1\\end{bmatrix}\\\\ &= \\begin{bmatrix}2\\\\0\\end{bmatrix}+\\begin{bmatrix}-1\\\\3\\end{bmatrix}+\\begin{bmatrix}6\\\\3\\end{bmatrix} = \\begin{bmatrix}7\\\\6\\end{bmatrix} \\end{aligned}$$ **By rows:** row 1 is $1,-1,2$, so $1(2)+(-1)(1)+2(3) = 7$; row 2 is $0,3,1$, so $0(2)+3(1)+1(3) = 6$. The two agree, as Theorem 2 guarantees. **Size:** the answer has **2** components because $A$ has 2 rows — the input had 3 components, and a matrix–vector product may change the dimension.",
+      "marks": [
+        "column computation shown with each column scaled before adding",
+        "row computation shown, giving the same vector",
+        "output size explained by the number of rows of $A$, not by the size of $\\mathbf{x}$"
+      ]
+    },
+    "B9": {
+      "review": "1.9",
+      "model": "**Row equations (Theorem 2):** $x_1+x_2 = 3$ (1); $2x_2+x_3 = 6$ (2); $x_1+3x_3 = 14$ (3). From (1), $x_1 = 3-x_2$; substituting into (3) gives $-x_2+3x_3 = 11$, so $x_2 = 3x_3-11$. Substituting that into (2): $2(3x_3-11)+x_3 = 6 \\Rightarrow 7x_3 = 28 \\Rightarrow x_3 = 4$. Then $x_2 = 1$ and $x_1 = 2$, so $\\mathbf{x} = \\begin{bmatrix}2\\\\1\\\\4\\end{bmatrix}$. **Column check:** $2\\begin{bmatrix}1\\\\0\\\\1\\end{bmatrix}+1\\begin{bmatrix}1\\\\2\\\\0\\end{bmatrix}+4\\begin{bmatrix}0\\\\1\\\\3\\end{bmatrix} = \\begin{bmatrix}3\\\\6\\\\14\\end{bmatrix} = \\mathbf{b}$ ✓",
+      "marks": [
+        "three row equations written correctly from $A$ and $\\mathbf{b}$",
+        "substitution carried through with the algebra shown",
+        "solution $(2,1,4)$ obtained",
+        "verified by the column view rather than by re-doing the rows"
+      ]
+    },
+    "B10": {
+      "review": "1.7",
+      "model": "$\\|c\\mathbf{v}\\| = \\sqrt{(cv_1)^2+\\cdots+(cv_n)^2} = \\sqrt{c^2(v_1^2+\\cdots+v_n^2)} = \\sqrt{c^2}\\,\\sqrt{v_1^2+\\cdots+v_n^2} = |c|\\,\\|\\mathbf{v}\\|$. The absolute value appears because $\\sqrt{c^2} = |c|$, not $c$: a negative scalar reverses the arrow but cannot give it a negative length. Applying this with $c = 1/\\|\\mathbf{v}\\|$, which is positive, $\\left\\|\\dfrac{1}{\\|\\mathbf{v}\\|}\\mathbf{v}\\right\\| = \\dfrac{1}{\\|\\mathbf{v}\\|}\\|\\mathbf{v}\\| = 1$.",
+      "marks": [
+        "$c^2$ factored out of the sum under the root",
+        "$\\sqrt{c^2}=|c|$ identified as the source of the absolute value, with the reason",
+        "the result applied to $c = 1/\\|\\mathbf{v}\\|$ to give length exactly 1"
+      ]
+    }
+  },
+  "extended": {
+    "C1": {
+      "review": "1.7",
+      "parts": {
+        "a": {
+          "model": "$c\\mathbf{v}+d\\mathbf{w} = c\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}+d\\begin{bmatrix}3\\\\-2\\\\1\\end{bmatrix} = \\begin{bmatrix}c+3d\\\\2c-2d\\\\3c+d\\end{bmatrix}$ for any real $c,d$.",
+          "marks": [
+            "all three components written in terms of $c$ and $d$",
+            "stated as holding for arbitrary real $c,d$"
+          ]
+        },
+        "b": {
+          "model": "Take $c = d = 0$, which are legal scalars: $0\\mathbf{v}+0\\mathbf{w} = \\mathbf{0}$. So the zero vector is on $P$. This is automatic for any set described as all combinations of given vectors, because choosing every coefficient to be zero is always allowed and always produces $\\mathbf{0}$.",
+          "marks": [
+            "$c=d=0$ substituted to produce the zero vector",
+            "general reason given: zero coefficients are always available"
+          ]
+        },
+        "c": {
+          "model": "We need $c+3d = 7$ (1), $2c-2d = -2$ (2), $3c+d = 5$ (3). From (2), $c = d-1$. Substituting into (1): $(d-1)+3d = 7$, so $4d = 8$, $d = 2$ and $c = 1$. Now test (3), which has not yet been used: $3(1)+2 = 5$ ✓. So $\\mathbf{b} = \\mathbf{v} + 2\\mathbf{w}$ and it **does** lie on $P$. The third equation contributed the *check*: two equations were enough to pin $c$ and $d$, and the third had to agree of its own accord. It is the same test that fails for a $\\mathbf{b}$ off the plane — passing it is what \"on the plane\" means.",
+          "marks": [
+            "system of three equations written and two of them solved for $c,d$",
+            "$c=1$, $d=2$ obtained and $\\mathbf{b}=\\mathbf{v}+2\\mathbf{w}$ stated",
+            "the unused equation tested and its role as the consistency check explained"
+          ]
+        },
+        "d": {
+          "model": "$\\mathbf{n}\\cdot\\mathbf{v} = 8(1)+8(2)+(-8)(3) = 8+16-24 = 0$ and $\\mathbf{n}\\cdot\\mathbf{w} = 8(3)+8(-2)+(-8)(1) = 24-16-8 = 0$, so by the distributive argument $\\mathbf{n}\\cdot(c\\mathbf{v}+d\\mathbf{w}) = 0$ for all $c,d$ and the claim holds. $\\|\\mathbf{n}\\| = \\sqrt{64+64+64} = 8\\sqrt3$, so the unit vector is $\\dfrac{1}{8\\sqrt3}\\begin{bmatrix}8\\\\8\\\\-8\\end{bmatrix} = \\dfrac{1}{\\sqrt3}\\begin{bmatrix}1\\\\1\\\\-1\\end{bmatrix}$. The plane is $8x_1+8x_2-8x_3 = 0$, or equivalently $x_1+x_2-x_3 = 0$.",
+          "marks": [
+            "both dot products computed as zero and the conclusion extended to all of $P$",
+            "unit vector found by dividing every component by $8\\sqrt3$",
+            "equation of the plane written, with the observation that a common factor may be cancelled"
+          ]
+        }
+      }
+    },
+    "C2": {
+      "review": "1.2",
+      "parts": {
+        "a": {
+          "model": "Test whether one step is a multiple of the other: $v_1w_2-v_2w_1 = 1(1)-2(3) = -5 \\ne 0$. The two steps point in genuinely different directions, so by Fact 1 every point of the floor is reachable, and each target has exactly one recipe.",
+          "marks": [
+            "the parallel test computed as $-5$",
+            "conclusion that the whole plane is reachable, and uniquely"
+          ]
+        },
+        "b": {
+          "model": "Solve $c\\begin{bmatrix}1\\\\2\\end{bmatrix}+d\\begin{bmatrix}3\\\\1\\end{bmatrix} = \\begin{bmatrix}14\\\\8\\end{bmatrix}$. Matching components: $c+3d = 14$ and $2c+d = 8$. Multiplying the second by 3 gives $6c+3d = 24$; subtracting the first leaves $5c = 10$, so $c = 2$ and then $d = 4$. Check: $2\\begin{bmatrix}1\\\\2\\end{bmatrix}+4\\begin{bmatrix}3\\\\1\\end{bmatrix} = \\begin{bmatrix}14\\\\8\\end{bmatrix}$ ✓ — two of Step P and four of Step Q, in any order.",
+          "marks": [
+            "vector equation expanded and components matched",
+            "solved to $c=2$, $d=4$ with the elimination step shown",
+            "answer checked by substitution"
+          ]
+        },
+        "c": {
+          "model": "Now $\\mathbf{q} = \\begin{bmatrix}2\\\\4\\end{bmatrix} = 2\\mathbf{p}$, so the test gives $1(4)-2(2) = 0$. **Geometrically:** both steps lie on the line through the origin and $(1,2)$, so every combination $c\\mathbf{p}+d\\mathbf{q} = (c+2d)\\mathbf{p}$ stays on that line — points with $y = 2x$. The target has $y = 8$ but $2x = 28$, so it is off the line. **Algebraically:** the component equations are $c+2d = 14$ and $2c+4d = 8$; the second is exactly twice the first on the left, but $2\\times 14 = 28 \\ne 8$ on the right — a contradiction, so no solution exists.",
+          "marks": [
+            "the two steps shown to be scalar multiples, via the test or directly",
+            "geometric argument that all combinations lie on one line, which the target misses",
+            "algebraic contradiction between the two component equations shown explicitly"
+          ]
+        },
+        "d": {
+          "model": "The reachable set is the entire line through the origin in the direction $\\begin{bmatrix}1\\\\2\\end{bmatrix}$ — all points $(t, 2t)$ for real $t$, since $c\\mathbf{p}+d\\mathbf{q} = (c+2d)\\mathbf{p}$ and $c+2d$ can be any real number. One reachable target other than the origin: $\\begin{bmatrix}7\\\\14\\end{bmatrix}$, reached for instance with $c = 7$, $d = 0$ (or $c=1$, $d=3$).",
+          "marks": [
+            "reachable set described as the whole line through the origin along $(1,2)$",
+            "a specific reachable nonzero target given with coefficients that produce it"
+          ]
+        }
+      }
+    },
+    "C3": {
+      "review": "1.5",
+      "parts": {
+        "a": {
+          "model": "$\\|\\mathbf{v}\\| = \\sqrt{9+16} = 5$; $\\|\\mathbf{w}\\| = \\sqrt{16+9} = 5$; $\\mathbf{v}\\cdot\\mathbf{w} = 3(4)+4(-3) = 12-12 = 0$. Since both vectors are nonzero and the dot product is zero, Corollary 1 gives $\\theta = 90°$: the sensors are at right angles.",
+          "marks": [
+            "both lengths computed as 5",
+            "dot product computed as 0 with the signs shown",
+            "angle stated as $90°$ with the perpendicularity test named as the reason"
+          ]
+        },
+        "b": {
+          "model": "$\\mathbf{u}_v = \\tfrac{1}{5}\\begin{bmatrix}3\\\\4\\end{bmatrix} = \\begin{bmatrix}0.6\\\\0.8\\end{bmatrix}$ and $\\mathbf{u}_w = \\tfrac{1}{5}\\begin{bmatrix}4\\\\-3\\end{bmatrix} = \\begin{bmatrix}0.8\\\\-0.6\\end{bmatrix}$. Check: $0.6^2+0.8^2 = 0.36+0.64 = 1$ ✓",
+          "marks": [
+            "both unit vectors obtained by dividing every component by the same length",
+            "one of them verified to have length 1"
+          ]
+        },
+        "c": {
+          "model": "$\\mathbf{u}\\cdot\\mathbf{v} = 1(3)+1(4) = 7$ and $\\|\\mathbf{u}\\| = \\sqrt2$, so $\\cos\\angle(\\mathbf{u},\\mathbf{v}) = \\dfrac{7}{5\\sqrt2} \\approx 0.99$. For $\\mathbf{w}$: $\\mathbf{u}\\cdot\\mathbf{w} = 1(4)+1(-3) = 1$, so $\\cos\\angle(\\mathbf{u},\\mathbf{w}) = \\dfrac{1}{5\\sqrt2} \\approx 0.14$. Both cosines are positive, so both angles are under $90°$; the larger cosine belongs to the smaller angle, so $\\mathbf{u}$ is much closer in direction to $\\mathbf{v}$ ($\\approx 8°$) than to $\\mathbf{w}$ ($\\approx 82°$).",
+          "marks": [
+            "$\\cos\\angle(\\mathbf{u},\\mathbf{v}) = 7/(5\\sqrt2)$ computed with both lengths divided out",
+            "the second cosine computed for comparison",
+            "correct conclusion that a larger cosine means a smaller angle, both being positive"
+          ]
+        },
+        "d": {
+          "model": "$\\|\\mathbf{v}\\|^2 = 25$, $\\|\\mathbf{w}\\|^2 = 25$; $\\mathbf{v}+\\mathbf{w} = \\begin{bmatrix}7\\\\1\\end{bmatrix}$, so $\\|\\mathbf{v}+\\mathbf{w}\\|^2 = 49+1 = 50 = 25+25$ ✓ This illustrates Corollary 2, the vector form of Pythagoras — **whose hypothesis is $\\mathbf{v}\\perp\\mathbf{w}$**, verified in part (a). Without that hypothesis the identity fails, and the correct general statement is the parallelogram law instead.",
+          "marks": [
+            "the three squared lengths computed and the identity confirmed",
+            "the hypothesis $\\mathbf{v}\\perp\\mathbf{w}$ stated explicitly as what makes it work"
+          ]
+        }
+      }
+    },
+    "C4": {
+      "review": "1.9",
+      "parts": {
+        "a": {
+          "model": "Rewriting each relation with the $x$'s on the left: $x_1 = b_1$, $-x_1+x_2 = b_2$, $-x_2+x_3 = b_3$, $-x_3+x_4 = b_4$. As one matrix equation $A\\mathbf{x} = \\mathbf{b}$ with $$A = \\begin{bmatrix}1&0&0&0\\\\-1&1&0&0\\\\0&-1&1&0\\\\0&0&-1&1\\end{bmatrix}$$",
+          "marks": [
+            "each relation rearranged so only $x$'s appear on the left",
+            "the $4\\times4$ difference matrix written correctly, including the signs"
+          ]
+        },
+        "b": {
+          "model": "Row equations: $x_1 = 100$; $-x_1+x_2 = 50 \\Rightarrow x_2 = 150$; $-x_2+x_3 = -30 \\Rightarrow x_3 = 120$; $-x_3+x_4 = 20 \\Rightarrow x_4 = 140$. Column check: $100\\begin{bmatrix}1\\\\-1\\\\0\\\\0\\end{bmatrix}+150\\begin{bmatrix}0\\\\1\\\\-1\\\\0\\end{bmatrix}+120\\begin{bmatrix}0\\\\0\\\\1\\\\-1\\end{bmatrix}+140\\begin{bmatrix}0\\\\0\\\\0\\\\1\\end{bmatrix}$ has components $100$, $-100+150 = 50$, $-150+120 = -30$, $-120+140 = 20$ — exactly $\\mathbf{b}$ ✓",
+          "marks": [
+            "solved top to bottom to $\\mathbf{x} = (100,150,120,140)$",
+            "the staircase structure used: each equation introduces one new unknown",
+            "verification done by the column view rather than by repeating the rows"
+          ]
+        },
+        "c": {
+          "model": "The pattern is $x_1 = b_1$, $x_2 = b_1+b_2$, $x_3 = b_1+b_2+b_3$, $x_4 = b_1+b_2+b_3+b_4$ — running totals. As a matrix, $$A^{-1} = \\begin{bmatrix}1&0&0&0\\\\1&1&0&0\\\\1&1&1&0\\\\1&1&1&1\\end{bmatrix}$$ In words: $A$ turns cumulative altitudes into day-to-day differences, and $A^{-1}$ turns day-to-day differences back into cumulative altitudes. Each undoes the other, which is what $A^{-1}(A\\mathbf{x}) = \\mathbf{x}$ says.",
+          "marks": [
+            "running-total pattern identified from the solved components",
+            "the lower-triangular matrix of 1's written correctly",
+            "both directions described in words: differences one way, cumulative totals the other"
+          ]
+        },
+        "d": {
+          "model": "Running totals of $\\mathbf{b} = (4,-2,5,1)$: $x_1 = 4$, $x_2 = 4-2 = 2$, $x_3 = 2+5 = 7$, $x_4 = 7+1 = 8$, so $\\mathbf{x} = \\begin{bmatrix}4\\\\2\\\\7\\\\8\\end{bmatrix}$. Check against a row equation of $A\\mathbf{x}=\\mathbf{b}$, say row 3: $-x_2+x_3 = -2+7 = 5 = b_3$ ✓",
+          "marks": [
+            "cumulative altitudes computed correctly as running totals",
+            "one component checked against the corresponding row equation of $A$"
+          ]
+        }
+      }
+    }
+  }
+}

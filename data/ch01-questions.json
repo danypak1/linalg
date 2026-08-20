@@ -1,0 +1,289 @@
+{
+  "module": "ch01",
+  "title": "Vectors, Length and Matrices",
+  "mcqIntro": "Twelve multiple-choice questions on Module 01. Work each one out on paper before choosing — several of them are designed so that the wrong answers are exactly what you get by taking a plausible shortcut.",
+  "mcq": [
+    {
+      "id": "A1",
+      "topic": "Linear combinations",
+      "stem": "A drone has two programmed moves, $\\mathbf{v}=\\begin{bmatrix}3\\\\-1\\end{bmatrix}$ and $\\mathbf{w}=\\begin{bmatrix}-2\\\\4\\end{bmatrix}$. Which vector describes running the first move twice and reversing the second three times, that is $2\\mathbf{v}-3\\mathbf{w}$?",
+      "options": {
+        "a": "$\\begin{bmatrix}0\\\\10\\end{bmatrix}$",
+        "b": "$\\begin{bmatrix}12\\\\-14\\end{bmatrix}$",
+        "c": "$\\begin{bmatrix}12\\\\10\\end{bmatrix}$",
+        "d": "$\\begin{bmatrix}0\\\\-14\\end{bmatrix}$"
+      }
+    },
+    {
+      "id": "A2",
+      "topic": "Linear combinations",
+      "stem": "The sum of two vectors is $\\begin{bmatrix}8\\\\2\\end{bmatrix}$ and their difference $\\mathbf{v}-\\mathbf{w}$ is $\\begin{bmatrix}2\\\\-4\\end{bmatrix}$. Which one is $\\mathbf{w}$?",
+      "options": {
+        "a": "$\\begin{bmatrix}5\\\\-1\\end{bmatrix}$",
+        "b": "$\\begin{bmatrix}6\\\\6\\end{bmatrix}$",
+        "c": "$\\begin{bmatrix}10\\\\-2\\end{bmatrix}$",
+        "d": "$\\begin{bmatrix}3\\\\3\\end{bmatrix}$"
+      }
+    },
+    {
+      "id": "A3",
+      "topic": "Reach and dependence",
+      "stem": "For which pair does $c\\mathbf{v}+d\\mathbf{w}$ reach **only** a line through the origin, rather than the whole plane?",
+      "options": {
+        "a": "$\\mathbf{v}=\\begin{bmatrix}2\\\\6\\end{bmatrix}$, $\\mathbf{w}=\\begin{bmatrix}-1\\\\-3\\end{bmatrix}$",
+        "b": "$\\mathbf{v}=\\begin{bmatrix}2\\\\6\\end{bmatrix}$, $\\mathbf{w}=\\begin{bmatrix}3\\\\-1\\end{bmatrix}$",
+        "c": "$\\mathbf{v}=\\begin{bmatrix}1\\\\4\\end{bmatrix}$, $\\mathbf{w}=\\begin{bmatrix}4\\\\1\\end{bmatrix}$",
+        "d": "$\\mathbf{v}=\\begin{bmatrix}0\\\\5\\end{bmatrix}$, $\\mathbf{w}=\\begin{bmatrix}5\\\\0\\end{bmatrix}$"
+      }
+    },
+    {
+      "id": "A4",
+      "topic": "Reach and dependence",
+      "stem": "Two vectors $\\mathbf{v},\\mathbf{w}$ in $\\mathbb{R}^3$ span a plane through the origin, and you solve $c\\mathbf{v}+d\\mathbf{w}=\\mathbf{b}$ by matching components. What role does the third component equation play?",
+      "options": {
+        "a": "It gives a third unknown, so all three can be found together.",
+        "b": "It duplicates the other two, so it can safely be ignored.",
+        "c": "It is a consistency test that $\\mathbf{b}$ may fail, meaning no solution.",
+        "d": "It fixes the scale of $\\mathbf{v}$ and $\\mathbf{w}$ before solving."
+      }
+    },
+    {
+      "id": "A5",
+      "topic": "Length and dot product",
+      "stem": "What is $\\|\\mathbf{a}\\|$ for $\\mathbf{a}=\\begin{bmatrix}5\\\\-12\\end{bmatrix}$?",
+      "options": {
+        "a": "$\\sqrt{119}$",
+        "b": "$169$",
+        "c": "$17$",
+        "d": "$13$"
+      }
+    },
+    {
+      "id": "A6",
+      "topic": "Length and dot product",
+      "stem": "Compute the dot product of $\\begin{bmatrix}4\\\\-3\\end{bmatrix}$ with $\\begin{bmatrix}3\\\\4\\end{bmatrix}$. What is the result?",
+      "options": {
+        "a": "$24$",
+        "b": "$0$",
+        "c": "$\\begin{bmatrix}12\\\\-12\\end{bmatrix}$",
+        "d": "$25$"
+      }
+    },
+    {
+      "id": "A7",
+      "topic": "Angles",
+      "stem": "You know $\\mathbf{v}\\cdot\\mathbf{w}=6$, $\\|\\mathbf{v}\\|=3$ and $\\|\\mathbf{w}\\|=4$. What is $\\cos\\theta$?",
+      "options": {
+        "a": "$6$",
+        "b": "$1.5$",
+        "c": "$0.5$",
+        "d": "$0.25$"
+      }
+    },
+    {
+      "id": "A8",
+      "topic": "Angles",
+      "stem": "A student doubles the length of $\\mathbf{v}$, leaving $\\mathbf{w}$ alone. What happens to $\\mathbf{v}\\cdot\\mathbf{w}$ and to the angle $\\theta$ between them?",
+      "options": {
+        "a": "The dot product doubles; the angle is unchanged.",
+        "b": "The dot product doubles; the angle doubles too.",
+        "c": "The dot product is unchanged; the angle halves.",
+        "d": "The dot product stays the same, and so does the angle."
+      }
+    },
+    {
+      "id": "A9",
+      "topic": "Perpendicularity and planes",
+      "stem": "Which statement is exactly what $\\mathbf{v}\\cdot\\mathbf{w}=0$ tells you about two vectors?",
+      "options": {
+        "a": "They have the same length, whatever their directions.",
+        "b": "They meet at a right angle, if neither is zero.",
+        "c": "At least one of them must be the zero vector.",
+        "d": "They are scalar multiples of one another."
+      }
+    },
+    {
+      "id": "A10",
+      "topic": "Perpendicularity and planes",
+      "stem": "A plane $P$ through the origin consists of all $c\\mathbf{v}+d\\mathbf{w}$. You have checked $\\mathbf{n}\\cdot\\mathbf{v}=0$ and $\\mathbf{n}\\cdot\\mathbf{w}=0$. Why is $\\mathbf{n}$ perpendicular to every point of $P$?",
+      "options": {
+        "a": "Because two spanning vectors always fix a unique normal direction, up to length.",
+        "b": "Because $\\mathbf{n}$ can be rescaled to unit length without changing the plane $P$.",
+        "c": "Because $\\mathbf{v}$ and $\\mathbf{w}$ are themselves perpendicular to one another.",
+        "d": "Because $\\mathbf{n}\\cdot(c\\mathbf{v}+d\\mathbf{w})$ expands to $c(0)+d(0)$ for every $c,d$."
+      }
+    },
+    {
+      "id": "A11",
+      "topic": "Matrix-vector product",
+      "stem": "$A$ is a $3\\times 2$ matrix and $\\mathbf{x}$ is in $\\mathbb{R}^2$. How many components does $A\\mathbf{x}$ have?",
+      "options": {
+        "a": "$3$, the number of rows of $A$",
+        "b": "$2$, the number of columns of $A$",
+        "c": "$1$, because $A\\mathbf{x}$ is a dot product",
+        "d": "$6$, one for each product $a_{ij}x_j$"
+      }
+    },
+    {
+      "id": "A12",
+      "topic": "Matrix-vector product",
+      "stem": "Let $A=\\begin{bmatrix}2&1\\\\0&3\\end{bmatrix}$ act on the recipe $\\mathbf{x}=\\begin{bmatrix}4\\\\2\\end{bmatrix}$. Which vector is the resulting combination of the columns of $A$?",
+      "options": {
+        "a": "$\\begin{bmatrix}8\\\\6\\end{bmatrix}$",
+        "b": "$\\begin{bmatrix}7\\\\5\\end{bmatrix}$",
+        "c": "$\\begin{bmatrix}10\\\\6\\end{bmatrix}$",
+        "d": "$\\begin{bmatrix}10\\\\12\\end{bmatrix}$"
+      }
+    }
+  ],
+  "short": [
+    {
+      "id": "B1",
+      "topic": "Linear combinations",
+      "prompt": "Find scalars $c,d$ with $c\\begin{bmatrix}2\\\\5\\end{bmatrix}+d\\begin{bmatrix}-1\\\\3\\end{bmatrix} = \\begin{bmatrix}9\\\\4\\end{bmatrix}$. Show the expansion step, solve, and check your answer by substituting back. [3 marks]"
+    },
+    {
+      "id": "B2",
+      "topic": "Reach and dependence",
+      "prompt": "Decide, **without solving for $c$ and $d$**, whether $c\\begin{bmatrix}2\\\\6\\end{bmatrix}+d\\begin{bmatrix}-1\\\\-3\\end{bmatrix}=\\begin{bmatrix}4\\\\5\\end{bmatrix}$ has a solution. State the test you used and what it tells you about the reachable set. [3 marks]"
+    },
+    {
+      "id": "B3",
+      "topic": "Length and dot product",
+      "prompt": "Find the unit vector in the direction of $\\mathbf{v}=\\begin{bmatrix}8\\\\15\\end{bmatrix}$, and verify that your answer has length $1$. [2 marks]"
+    },
+    {
+      "id": "B4",
+      "topic": "Angles",
+      "prompt": "This pair is HW 1-2 (2)(a). Find $\\cos\\theta$ for $\\mathbf{v}=\\begin{bmatrix}2\\\\2\\\\-1\\end{bmatrix}$ and $\\mathbf{w}=\\begin{bmatrix}2\\\\-1\\\\2\\end{bmatrix}$, state $\\theta$, and say what your answer means geometrically. [3 marks]"
+    },
+    {
+      "id": "B5",
+      "topic": "Perpendicularity and planes",
+      "prompt": "Show that the parallelogram with sides $\\mathbf{v}=\\begin{bmatrix}6\\\\2\\end{bmatrix}$ and $\\mathbf{w}=\\begin{bmatrix}-1\\\\3\\end{bmatrix}$ drawn from one corner is a rectangle, then verify $\\|\\mathbf{v}\\|^2+\\|\\mathbf{w}\\|^2 = \\|\\mathbf{v}+\\mathbf{w}\\|^2$ numerically. [3 marks]"
+    },
+    {
+      "id": "B6",
+      "topic": "Angles",
+      "prompt": "Prove the parallelogram law $\\|\\mathbf{v}+\\mathbf{w}\\|^2+\\|\\mathbf{v}-\\mathbf{w}\\|^2 = 2\\|\\mathbf{v}\\|^2+2\\|\\mathbf{w}\\|^2$ for arbitrary $\\mathbf{v},\\mathbf{w}$ in $\\mathbb{R}^n$. Use $\\|\\mathbf{x}\\|^2=\\mathbf{x}\\cdot\\mathbf{x}$ and expand symbolically — do not choose specific numbers. [4 marks]"
+    },
+    {
+      "id": "B7",
+      "topic": "Perpendicularity and planes",
+      "prompt": "The vectors $\\mathbf{v}=\\begin{bmatrix}2\\\\1\\\\0\\end{bmatrix}$ and $\\mathbf{w}=\\begin{bmatrix}0\\\\1\\\\2\\end{bmatrix}$ span a plane $P$ through the origin. Verify that $\\mathbf{n}=\\begin{bmatrix}1\\\\-2\\\\1\\end{bmatrix}$ is perpendicular to $P$, and explain in one line why checking two dot products is enough. [3 marks]"
+    },
+    {
+      "id": "B8",
+      "topic": "Matrix-vector product",
+      "prompt": "Compute $A\\mathbf{x}$ for $A=\\begin{bmatrix}1&-1&2\\\\0&3&1\\end{bmatrix}$ and $\\mathbf{x}=\\begin{bmatrix}2\\\\1\\\\3\\end{bmatrix}$ **both** ways — as a combination of the columns of $A$, and row by row. State how many components the result has and why. [3 marks]"
+    },
+    {
+      "id": "B9",
+      "topic": "Matrix-vector product",
+      "prompt": "Solve $A\\mathbf{x}=\\mathbf{b}$ for $A=\\begin{bmatrix}1&1&0\\\\0&2&1\\\\1&0&3\\end{bmatrix}$, $\\mathbf{b}=\\begin{bmatrix}3\\\\6\\\\14\\end{bmatrix}$ using the row equations, then verify your solution with the column view. [4 marks]"
+    },
+    {
+      "id": "B10",
+      "topic": "Length and dot product",
+      "prompt": "Show that for any scalar $c$ and any vector $\\mathbf{v}$, $\\|c\\mathbf{v}\\| = |c|\\,\\|\\mathbf{v}\\|$, and explain where the absolute value comes from. Then use the result to explain why $\\mathbf{v}/\\|\\mathbf{v}\\|$ has length exactly $1$. [3 marks]"
+    }
+  ],
+  "extended": [
+    {
+      "id": "C1",
+      "topic": "Perpendicularity and planes",
+      "title": "A plane described two ways",
+      "intro": "This is **Midterm 2024, Problem II**, worked in full and on the paper's own vectors: the linear combinations of $\\mathbf{v}=\\begin{bmatrix}1\\\\2\\\\3\\end{bmatrix}$ and $\\mathbf{w}=\\begin{bmatrix}3\\\\-2\\\\1\\end{bmatrix}$ fill a plane $P$ through the origin in $\\mathbb{R}^3$. Parts (a), (b) and (d) are the exam's own four tasks in its order, walking from the 'combinations' description of $P$ to a single equation for it. Part (c) is not on the paper: it is added here because the consistency test it drills is the step most often skipped when a target has to be tested against a plane. Worked example 6 runs that test on a $\\mathbf{b}$ that fails it; part (c) here runs it on one that passes, which is the case the notes do not work.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Write the general point of $P$ as $c\\mathbf{v}+d\\mathbf{w}$, giving all three components in terms of $c$ and $d$. [2 marks]"
+        },
+        {
+          "id": "b",
+          "prompt": "Verify that the zero vector lies on $P$, and explain why this is automatic for any plane described as combinations of two vectors. [2 marks]"
+        },
+        {
+          "id": "c",
+          "prompt": "Determine whether $\\mathbf{b}=\\begin{bmatrix}7\\\\-2\\\\5\\end{bmatrix}$ lies on $P$ by solving for $c$ and $d$. If it does, give the coefficients and say what the third component equation contributed. [3 marks]"
+        },
+        {
+          "id": "d",
+          "prompt": "The vector $\\mathbf{n}=\\begin{bmatrix}8\\\\8\\\\-8\\end{bmatrix}$ is claimed to be normal to $P$. Test the claim, and if it holds, give the unit vector along $\\mathbf{n}$ and the equation of $P$ in the form $n_1x_1+n_2x_2+n_3x_3=0$. [3 marks]"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "topic": "Reach and dependence",
+      "title": "A delivery robot with two step patterns",
+      "intro": "Parts (a) and (b) are HW 1-1 (3), with its own two vectors and its own target; parts (c) and (d) carry it further than the homework does. A warehouse robot executes only two pre-programmed steps, and may repeat or reverse either one any number of times (including fractional amounts, since the drive is continuous). Step P moves it $\\begin{bmatrix}1\\\\2\\end{bmatrix}$ and Step Q moves it $\\begin{bmatrix}3\\\\1\\end{bmatrix}$, in metres east and north.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Before computing anything, decide whether every point of the floor is reachable. State the arithmetic test you used and its outcome. [2 marks]"
+        },
+        {
+          "id": "b",
+          "prompt": "Find the numbers of Step P and Step Q that land the robot exactly at $\\begin{bmatrix}14\\\\8\\end{bmatrix}$, and check your answer. [3 marks]"
+        },
+        {
+          "id": "c",
+          "prompt": "The Step Q motor is reprogrammed so that Q now moves $\\begin{bmatrix}2\\\\4\\end{bmatrix}$. Show that the target $\\begin{bmatrix}14\\\\8\\end{bmatrix}$ is now unreachable, giving both the geometric reason and the algebraic contradiction. [3 marks]"
+        },
+        {
+          "id": "d",
+          "prompt": "With the reprogrammed Q, describe the complete set of reachable points, and give one target other than the origin that the robot can still reach. [2 marks]"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "topic": "Angles",
+      "title": "Two sensor directions",
+      "intro": "Two sensors on a mast point along $\\mathbf{v}=\\begin{bmatrix}3\\\\4\\end{bmatrix}$ and $\\mathbf{w}=\\begin{bmatrix}4\\\\-3\\end{bmatrix}$ (metres, in a vertical plane). An engineer needs to know how they are oriented relative to each other and to a target direction.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Compute $\\|\\mathbf{v}\\|$, $\\|\\mathbf{w}\\|$ and $\\mathbf{v}\\cdot\\mathbf{w}$, and state the angle between the two sensors, with the reason. [3 marks]"
+        },
+        {
+          "id": "b",
+          "prompt": "Give the unit vectors along $\\mathbf{v}$ and along $\\mathbf{w}$, and verify one of them has length $1$. [2 marks]"
+        },
+        {
+          "id": "c",
+          "prompt": "A third direction is $\\mathbf{u}=\\begin{bmatrix}1\\\\1\\end{bmatrix}$. Find the cosine of the angle between $\\mathbf{u}$ and $\\mathbf{v}$, and say whether that angle is smaller or larger than the angle between $\\mathbf{u}$ and $\\mathbf{w}$, justifying your answer from the signs. [3 marks]"
+        },
+        {
+          "id": "d",
+          "prompt": "Using $\\mathbf{v}$ and $\\mathbf{w}$ from this question, verify the Pythagorean identity $\\|\\mathbf{v}\\|^2+\\|\\mathbf{w}\\|^2=\\|\\mathbf{v}+\\mathbf{w}\\|^2$ numerically, and state the general result it illustrates together with its hypothesis. [2 marks]"
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "topic": "Matrix-vector product",
+      "title": "Altitudes, differences and an undo matrix",
+      "intro": "The matrix here is the $4\\times4$ difference equation of HW 1-3 (2), which asks for $x_1,\\dots,x_4$ and then for $A^{-1}$; the altitudes it is dressed in, and part (d), are this course's. A hiker records the change in her altitude each day, measured from a sea-level start: $b_1$ metres on day 1, $b_2$ on day 2, and so on. Her cumulative altitudes $x_1,\\dots,x_4$ at the end of each day satisfy $x_1=b_1$, $x_2-x_1=b_2$, $x_3-x_2=b_3$, $x_4-x_3=b_4$.",
+      "parts": [
+        {
+          "id": "a",
+          "prompt": "Write the four relations as a single matrix equation $A\\mathbf{x}=\\mathbf{b}$, giving $A$ explicitly. [2 marks]"
+        },
+        {
+          "id": "b",
+          "prompt": "For $\\mathbf{b}=\\begin{bmatrix}100\\\\50\\\\-30\\\\20\\end{bmatrix}$, solve for $\\mathbf{x}$ using the row equations, and verify the answer using the column view. [3 marks]"
+        },
+        {
+          "id": "c",
+          "prompt": "Read the pattern in your solution and write down the matrix $A^{-1}$ that turns any $\\mathbf{b}$ back into $\\mathbf{x}$. Describe in words what each of $A$ and $A^{-1}$ does. [3 marks]"
+        },
+        {
+          "id": "d",
+          "prompt": "A second hiker has $\\mathbf{b}=\\begin{bmatrix}4\\\\-2\\\\5\\\\1\\end{bmatrix}$. Find her cumulative altitudes using $A^{-1}$, and check one component against the corresponding row equation of $A\\mathbf{x}=\\mathbf{b}$. [2 marks]"
+        }
+      ]
+    }
+  ]
+}
