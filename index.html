@@ -4,8 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linear Algebra</title>
+  <!-- The link-preview card. Generated: see apply-config.py. -->
+  <!--gen:og--><meta property="og:type" content="website">
+    <meta property="og:site_name" content="Linear Algebra">
+    <meta property="og:title" content="Linear Algebra">
+    <meta property="og:description" content="Five modules of linear algebra notes and 130 exam-style questions with mark schemes — vectors, elimination and LU, determinants, rank and the complete solution, eigenvalues.">
+    <meta property="og:url" content="https://danypak1.github.io/linalg/">
+    <meta property="og:image" content="https://danypak1.github.io/linalg/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Linear Algebra — Elimination, spaces, eigenvalues">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Linear Algebra">
+    <meta name="twitter:description" content="Five modules of linear algebra notes and 130 exam-style questions with mark schemes — vectors, elimination and LU, determinants, rank and the complete solution, eigenvalues.">
+    <meta name="twitter:image" content="https://danypak1.github.io/linalg/og.png"><!--/gen-->
   <meta name="description" content="<!--gen:metaDescription-->Five modules of linear algebra notes and 130 exam-style questions with mark schemes — vectors, elimination and LU, determinants, rank and the complete solution, eigenvalues.<!--/gen-->">
-  <link rel="stylesheet" href="styles.css?v=45">
+  <link rel="stylesheet" href="styles.css?v=46">
   <!--gen:themeCss--><!--/gen-->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'><!--gen:icon-->🧮<!--/gen--></text></svg>">
   <!-- Honour the theme the student picked inside the app. In <head> and inline so
@@ -267,7 +281,7 @@
           <li>The mock exam and the pass over everything you got wrong</li>
           <li>Two devices at a time — your laptop and your phone</li>
         </ul>
-        <a class="btn" href="https://t.me/danypak" target="_blank" rel="noopener">Get a key — $25</a>
+        <a class="btn" href="https://t.me/danypak?text=Hi%21%20I%27d%20like%20a%20key%20for%20Linear%20Algebra%20%28%2425%29." target="_blank" rel="noopener">Get a key — $25</a>
       </div>
     </div>
     <!--/gen-->
@@ -289,5 +303,31 @@
       <!--gen:attribution-->Independent study guide for a first course in Linear Algebra. Every worked example and every practice question is written for this course. Where a problem from a past paper or a homework sheet is worked through, it is named where it appears — those papers are the student's own course materials, and they are quoted to show how the method applies to them, never passed off as this course's own. Not affiliated with or endorsed by any university or instructor, and not endorsed by Strang's Introduction to Linear Algebra, which it follows as a reference.<!--/gen-->
     </p>
   </div>
+  <!--gen:beacon--><script>
+    /* Two counts, no identity: the page was opened, and a link to the
+       chat was followed. Once per browser session, never awaited, and
+       wrapped so that a counter can never break the page it measures. */
+    (function () {
+      var W = "https://linalg-api.danypak.workers.dev", C = "linalg";
+      function ping(kind) {
+        try {
+          var k = "beacon:" + C + ":" + kind;
+          if (sessionStorage.getItem(k)) return;
+          sessionStorage.setItem(k, "1");
+        } catch (e) { /* private mode: count it, do not dedupe it */ }
+        try {
+          fetch(W + "/beacon", { method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ course: C, kind: kind, surface: "landing" }),
+            keepalive: true }).catch(function () {});
+        } catch (e) {}
+      }
+      ping("visit");
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="t.me/"]');
+        if (a) ping("buy_click");
+      }, true);
+    }());
+  </script><!--/gen-->
 </body>
 </html>
